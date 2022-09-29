@@ -9,18 +9,22 @@ public class Main {
         String a;
         do {
             a = button();
-            if (a.equals("1")) {
-                System.out.println(bankAccount.getAmount());
-            } else if (a.equals("2")) {
-                System.out.print("Enter your deposit sum: ");
-                double depositSum = in.nextDouble();
-                bankAccount.deposit(depositSum);
-            } else if (a.equals("3")) {
-                System.out.print("Enter your withdrawing sum: ");
-                double withDrawingSum = in.nextDouble();
-                bankAccount.withDraw(withDrawingSum);
+            try {
+                if (a.equals("1")) {
+                    System.out.println(bankAccount.getAmount());
+                } else if (a.equals("2")) {
+                    System.out.print("Enter your deposit sum: ");
+                    double depositSum = in.nextDouble();
+                    bankAccount.deposit(depositSum);
+                } else if (a.equals("3")) {
+                    System.out.print("Enter your withdrawing sum: ");
+                    double withDrawingSum = in.nextDouble();
+                    bankAccount.withDraw(withDrawingSum);
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-        } while (a != "4");
+        } while (!a.equals("4"));
     }
 
     static void commands() {

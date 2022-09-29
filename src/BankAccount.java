@@ -11,7 +11,7 @@ public class BankAccount {
             if ((accountBalance + sum) <= 200000) {
                 this.amount += sum;
             } else {
-                throw new LimitException("The ballance more than 200000 som, naw balance is ", accountBalance);
+                throw new LimitException("The ballance more than 200000 som, now balance is ", accountBalance);
             }
         } else {
             throw new Exception("Sum of deposit must be less then 60000 som");
